@@ -74,13 +74,18 @@ const config = {
           "100%": {
             transform: "translateY(-50%)"
           }
+        },
+        flashing: {
+          "0%, 100%": { opacity: "0.2" },
+          "20%": { opacity: "1" }
         }
       },
       animation: {
         "marquee": "marquee var(--marquee-duration) linear infinite",
         "fade-in": "fade-in 0.5s linear forwards",
         "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out"
+        "accordion-up": "accordion-up 0.2s ease-out",
+        "flashing": "flashing 1.4s infinite linear"
       }
     }
   },
