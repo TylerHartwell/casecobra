@@ -23,6 +23,11 @@ const DesignPreview = ({ configuration }: { configuration: Configuration }) => {
   if (material === "polycarbonate") totalPrice += PRODUCT_PRICES.material.polycarbonate
   if (finish === "textured") totalPrice += PRODUCT_PRICES.finish.textured
 
+  const {} = useMutation({
+    mutationKey: ["get-checkout-session"],
+    mutationFn: undefined
+  })
+
   return (
     <>
       <div aria-hidden="true" className="pointer-events-none select-none absolute inset-0 overflow-hidden flex justify-center">
