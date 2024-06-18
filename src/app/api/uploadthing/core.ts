@@ -30,7 +30,7 @@ export const ourFileRouter = {
 
         return { configId: configuration.id }
       } else {
-        const updatedConnfiguration = await db.configuration.update({
+        const updatedConfiguration = await db.configuration.update({
           where: {
             id: configId
           },
@@ -39,7 +39,7 @@ export const ourFileRouter = {
           }
         })
 
-        return { configId: updatedConnfiguration.id }
+        return { configId: updatedConfiguration.id }
       }
     })
 } satisfies FileRouter
