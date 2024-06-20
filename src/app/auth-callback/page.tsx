@@ -23,14 +23,16 @@ const Page = () => {
     retryDelay: 1000
   })
 
-  if (data?.success) {
-    if (configId) {
-      localStorage.removeItem("configurationId")
-      router.push(`/configure/preview?id=${configId}`)
-    } else {
-      router.push("/")
+  useEffect(() => {
+    if (data?.success) {
+      if (configId) {
+        localStorage.removeItem("configurationId")
+        router.push(`/configure/preview?id=${configId}`)
+      } else {
+        router.push("/")
+      }
     }
-  }
+  }, [data, configId, router])
 
   return (
     <div className="w-full mt-24 flex justify-center">
