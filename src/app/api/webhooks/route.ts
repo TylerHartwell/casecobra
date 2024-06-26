@@ -7,9 +7,11 @@ import { Resend } from "resend"
 import OrderReceivedEmail from "@/components/emails/OrderReceivedEmail"
 
 const resend = new Resend(process.env.RESEND_API_KEY)
+console.log("--------PRE POST-----------")
 
 export async function POST(req: Request) {
   try {
+    console.log("--------POST TRY-----------")
     const body = await req.text()
     const signature = headers().get("stripe-signature")
 
@@ -66,6 +68,7 @@ export async function POST(req: Request) {
           }
         }
       })
+      console.log("---READY TO SEND EMAIL---")
 
       await resend.emails.send({
         from: "CaseCobra <thartwell37@gmail.com>",
