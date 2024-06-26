@@ -13,14 +13,16 @@ const Page = () => {
   useEffect(() => {
     const configurationId = localStorage.getItem("configurationId")
 
-    if (configurationId) setConfigId(configurationId)
+    if (configurationId) {
+      setConfigId(configurationId)
+    }
   }, [])
 
   const { data } = useQuery({
     queryKey: ["auth-callback"],
     queryFn: async () => await getAuthStatus(),
     retry: true,
-    retryDelay: 1000
+    retryDelay: 500
   })
 
   if (data?.success) {
