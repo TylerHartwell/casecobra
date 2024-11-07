@@ -24,7 +24,7 @@ export default function RootLayout({
           Demo Site Notice: Orders placed here will not be processed, and payments will not be charged.
         </p>
         <Navbar />
-        <main className="flex flex-col min-h-[calc(100vh-3.5rem-1px)] grainy-light">
+        <main className="flex flex-col min-h-[calc(100vh-3.5rem-1px)] grainy-light px-4">
           <div className="flex flex-1 flex-col h-full">
             <Providers>{children}</Providers>
           </div>
