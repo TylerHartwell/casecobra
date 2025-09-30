@@ -7,7 +7,7 @@ import { buttonVariants } from "./ui/button"
 const LoginModal = ({ isOpen, setIsOpen }: { isOpen: boolean; setIsOpen: Dispatch<SetStateAction<boolean>> }) => {
   return (
     <Dialog onOpenChange={setIsOpen} open={isOpen}>
-      <DialogContent className="absolute z-[999999]">
+      <DialogContent className="absolute z-999999">
         <DialogHeader>
           <div className="relative mx-auto w-24 h-24 mb-2">
             <Image src="/snake-1.png" alt="snake image" className="object-contain" fill />
@@ -19,7 +19,7 @@ const LoginModal = ({ isOpen, setIsOpen }: { isOpen: boolean; setIsOpen: Dispatc
           </DialogDescription>
         </DialogHeader>
         <div className="grid grid-cols-2 gap-6 divide-x divide-gray-200">
-          <LoginLink className={buttonVariants({ variant: "outline" })}>Login</LoginLink>
+          <LoginLink className={buttonVariants({ variant: "outline-solid" })}>Login</LoginLink>
           <RegisterLink className={buttonVariants({ variant: "default" })}>Sign up</RegisterLink>
         </div>
       </DialogContent>
