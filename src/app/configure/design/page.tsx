@@ -2,8 +2,9 @@ import { db } from "@/db"
 import { notFound } from "next/navigation"
 import DesignConfigurator from "./DesignConfigurator"
 
-const Page = async ({ searchParams }: { searchParams?: Record<string, string | string[] | undefined> }) => {
-  const id = searchParams?.id
+const Page = async ({ searchParams }: { searchParams: Promise<Record<string, string | string[] | undefined>> }) => {
+  const resolvedSearchParams = await searchParams
+  const id = resolvedSearchParams.id
 
   if (!id || typeof id !== "string") {
     return notFound()
