@@ -2,14 +2,8 @@ import { db } from "@/db"
 import { notFound } from "next/navigation"
 import DesignConfigurator from "./DesignConfigurator"
 
-interface PageProps {
-  searchParams: {
-    [key: string]: string | string[] | undefined
-  }
-}
-
-const Page = async ({ searchParams }: PageProps) => {
-  const { id } = searchParams
+const Page = async ({ searchParams }: { searchParams?: Record<string, string | string[] | undefined> }) => {
+  const id = searchParams?.id
 
   if (!id || typeof id !== "string") {
     return notFound()
