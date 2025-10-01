@@ -14,12 +14,12 @@ const LoginModal = ({ isOpen, setIsOpen }: { isOpen: boolean; setIsOpen: Dispatc
           </div>
           <DialogTitle className="text-3xl text-center font-bold tracking-tight text-gray-900">Log in to continue</DialogTitle>
           <DialogDescription className="text-base text-center py-2">
-            <span className="font-medium text-zinc-900">Your configuration was saved!</span> Please login or create an account to
-            complete your purchase.
+            <span className="font-medium text-zinc-900">Your configuration was saved!</span> Please login or create an account to complete your
+            purchase.
           </DialogDescription>
         </DialogHeader>
         <div className="grid grid-cols-2 gap-6 divide-x divide-gray-200">
-          <LoginLink className={buttonVariants({ variant: "outline-solid" })}>Login</LoginLink>
+          <LoginLink className={buttonVariants({ variant: "outline" })}>Login</LoginLink>
           <RegisterLink className={buttonVariants({ variant: "default" })}>Sign up</RegisterLink>
         </div>
       </DialogContent>
