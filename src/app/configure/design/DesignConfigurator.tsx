@@ -130,13 +130,13 @@ const DesignConfigurator = ({ configId, imageUrl, imageDimensions }: DesignConfi
     <div className="relative mt-20 grid grid-cols-1 lg:grid-cols-3 mb-20 pb-20">
       <div
         ref={containerRef}
-        className="relative h-[37.5rem] overflow-hidden col-span-2 w-full max-w-4xl flex items-center justify-center rounded-lg border-2 border-dashed border-gray-300 p-12 text-center focus:outline:none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+        className="relative h-150 overflow-hidden col-span-2 w-full max-w-4xl flex items-center justify-center rounded-lg border-2 border-dashed border-gray-300 p-12 text-center focus:outline:none focus:ring-2 focus:ring-primary focus:ring-offset-2"
       >
-        <div className="relative w-60 bg-opacity-50 pointer-events-none aspect-[896/1831]">
+        <div className="relative w-60 bg-opacity-50 pointer-events-none aspect-896/1831">
           <AspectRatio
             ref={phoneCaseRef}
             ratio={896 / 1831}
-            className="pointer-events-none relative z-50 aspect-[896/1831] w-full"
+            className="pointer-events-none relative z-50 aspect-896/1831 w-full"
           >
             <NextImage fill alt="phone image" src="/phone-template.png" className="pointer-events-none z-50 select-none" />
           </AspectRatio>
@@ -179,11 +179,11 @@ const DesignConfigurator = ({ configId, imageUrl, imageDimensions }: DesignConfi
         </Rnd>
       </div>
 
-      <div className="h-[37.5rem] w-full col-span-full lg:col-span-1 flex flex-col bg-white">
+      <div className="h-150 w-full col-span-full lg:col-span-1 flex flex-col bg-white">
         <ScrollArea className="relative flex-1 overflow-auto">
           <div
             aria-hidden="true"
-            className="absolute z-10 inset-x-0 bottom-0 h-12 bg-gradient-to-t from-white pointer-events-none"
+            className="absolute z-10 inset-x-0 bottom-0 h-12 bg-linear-to-t from-white pointer-events-none"
           />
           <div className="px-8 pb-12 pt-8">
             <h2 className="tracking-tight font-bold text-3xl">Customize your case</h2>
@@ -209,7 +209,7 @@ const DesignConfigurator = ({ configId, imageUrl, imageDimensions }: DesignConfi
                         value={color}
                         className={({ focus, checked }) =>
                           cn(
-                            "relative -m-0.5 flex cursor-pointer items-center justify-center rounded-full p-0.5 active:ring-0 focus:ring-0 active:outline-none focus:outline-none border-2 border-transparent",
+                            "relative -m-0.5 flex cursor-pointer items-center justify-center rounded-full p-0.5 active:ring-0 focus:ring-0 active:outline-hidden focus:outline-hidden border-2 border-transparent",
                             {
                               [`border-${color.tw}`]: focus || checked
                             }
@@ -271,7 +271,7 @@ const DesignConfigurator = ({ configId, imageUrl, imageDimensions }: DesignConfi
                           value={option}
                           className={({ focus, checked }) =>
                             cn(
-                              "relative block cursor-pointer rounded-lg bg-white px-6 py-4 shadow-sm border-2 border-zinc-200 focus:outline-none ring-0 focus:ring-0 outline-none sm:flex sm:justify-between",
+                              "relative block cursor-pointer rounded-lg bg-white px-6 py-4 shadow-xs border-2 border-zinc-200 focus:outline-hidden ring-0 focus:ring-0 outline-hidden sm:flex sm:justify-between",
                               {
                                 "border-primary": focus || checked
                               }

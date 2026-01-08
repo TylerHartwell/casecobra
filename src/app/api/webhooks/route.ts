@@ -13,7 +13,7 @@ export async function POST(req: Request) {
   try {
     console.log("--------POST TRY-----------")
     const body = await req.text()
-    const signature = (await headers()).get("stripe-signature")
+    const signature = headers().get("stripe-signature")
 
     if (!signature) {
       return new Response("invalid signature", { status: 400 })
@@ -26,7 +26,9 @@ export async function POST(req: Request) {
         throw new Error("Missing user email")
       }
 
-      const session = event.data.object as Stripe.Checkout.Session
+      const session = event.data.object as Stripe.Checkout.Session & {
+        shipping_details?: { address: Stripe.Address | null }
+      }
 
       const { userId, orderId } = session.metadata || {
         userId: null,
@@ -38,7 +40,7 @@ export async function POST(req: Request) {
       }
 
       const billingAddress = session.customer_details!.address
-      const shippingAddress = session.customer_details!.address
+      const shippingAddress = session.shipping_details!.address
 
       const updatedOrder = await db.order.update({
         where: {

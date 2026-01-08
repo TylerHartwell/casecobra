@@ -17,7 +17,7 @@ export default function Home() {
               <div className="absolute w-28 left-0 -top-20 hidden lg:block">
                 <img src="/snake-1.png" alt="snake logo" className="w-full" />
               </div>
-              <h1 className="relative w-fit tracking-tight text-balance mt-16 font-bold !leading-tight text-gray-900 text-5xl md:text-6xl lg:text-7xl">
+              <h1 className="relative w-fit tracking-tight text-balance mt-16 font-bold leading-tight! text-gray-900 text-5xl md:text-6xl lg:text-7xl">
                 Your Image on a <span className="bg-green-600 px-2 text-white">Custom</span> Phone Case
               </h1>
               <p className="mt-8 text-lg lg:pr-10 max-w-prose text-center lg:text-left text-balance md:text-wrap">
@@ -102,7 +102,7 @@ export default function Home() {
       <section className="bg-slate-100 py-24">
         <MaxWidthWrapper className="flex flex-col items-center gap-16 sm:gap-32">
           <div className="flex flex-col lg:flex-row items-center gap-4 sm:gap-6">
-            <h2 className="order-1 mt-2 tracking-tight text-center text-balance !leading-tight font-bold text-5xl md:text-6xl text-gray-900">
+            <h2 className="order-1 mt-2 tracking-tight text-center text-balance leading-tight! font-bold text-5xl md:text-6xl text-gray-900">
               What our{" "}
               <span className="relative px-2">
                 customers{" "}
@@ -181,7 +181,7 @@ export default function Home() {
         <MaxWidthWrapper className="py-24">
           <div className="mb-12 px-6 lg:px-8">
             <div className="mx-auto max-w-2xl sm:text-center">
-              <h2 className="order-1 mt-2 tracking-tight text-center text-balance !leading-tight font-bold text-5xl md:text-6xl text-gray-900">
+              <h2 className="order-1 mt-2 tracking-tight text-center text-balance leading-tight! font-bold text-5xl md:text-6xl text-gray-900">
                 Upload your photo and get <span className="relative px-2 bg-green-600 text-white">your own case </span> now
               </h2>
             </div>
@@ -191,7 +191,7 @@ export default function Home() {
             <div className="relative flex flex-col items-center md:grid grid-cols-2 gap-40">
               <img
                 src="/arrow.png"
-                className="absolute top-[25rem] md:top-1/2 -translate-y-1/2 z-10 left-1/2 -translate-x-1/2 rotate-90 md:rotate-0"
+                className="absolute top-100 md:top-1/2 -translate-y-1/2 z-10 left-1/2 -translate-x-1/2 rotate-90 md:rotate-0"
                 alt="arrow"
               />
 

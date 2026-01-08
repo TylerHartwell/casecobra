@@ -2,14 +2,9 @@ import { db } from "@/db"
 import { notFound } from "next/navigation"
 import DesignPreview from "./DesignPreview"
 
-interface PageProps {
-  searchParams: {
-    [key: string]: string | string[] | undefined
-  }
-}
-
-const Page = async ({ searchParams }: PageProps) => {
-  const { id } = searchParams
+const Page = async ({ searchParams }: { searchParams: Promise<Record<string, string | string[] | undefined>> }) => {
+  const resolvedSearchParams = await searchParams
+  const id = resolvedSearchParams.id
 
   if (!id || typeof id !== "string") {
     return notFound()
