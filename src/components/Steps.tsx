@@ -42,7 +42,7 @@ const Steps = () => {
                 aria-hidden="true"
               />
               <span className={cn(i !== 0 ? "lg:pl-9" : "", "flex items-center px-6 py-4 text-sm font-medium")}>
-                <span className="flex-shrink-0">
+                <span className="shrink-0">
                   <img
                     src={imgPath}
                     alt="snake"

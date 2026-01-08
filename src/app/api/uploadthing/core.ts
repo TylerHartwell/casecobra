@@ -1,4 +1,4 @@
-import { createUploadthing, type FileRouter } from "uploadthing/next"
+import { createUploadthing, type FileRouter } from "uploadthing/server"
 import { z } from "zod"
 import sharp from "sharp"
 import { db } from "@/db"
@@ -9,6 +9,9 @@ export const ourFileRouter = {
   imageUploader: f({ image: { maxFileSize: "4MB" } })
     .input(z.object({ configId: z.string().optional() }))
     .middleware(async ({ input }) => {
+      if (input.configId && typeof input.configId !== "string") {
+        throw new Error("Invalid configId")
+      }
       return { input }
     })
     .onUploadComplete(async ({ metadata, file }) => {
